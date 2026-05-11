@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Concept Summary</title>
+<meta name="description" content="สรุป Concept คำสั่ง Java พร้อมตัวอย่างโค้ดและวิธีการนำไปใช้">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <a href="#" class="header-logo">
+    <div class="logo-icon">J</div>
+    <div class="logo-text">Java<span>Summary</span></div>
+  </a>
+  <div class="search-container">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="searchInput" placeholder="ค้นหาคำสั่ง...">
+  </div>
+  <button class="menu-toggle" id="menuToggle">☰</button>
+</header>
+
+<!-- Sidebar Overlay -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Sidebar -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-title">📚 หัวข้อทั้งหมด</div>
+  <div class="sidebar-section">
+    <a href="#variables" class="nav-link"><span class="nav-icon">📦</span> ตัวแปร (Variables)</a>
+    <a href="#output" class="nav-link"><span class="nav-icon">🖨️</span> การแสดงผล (Output)</a>
+    <a href="#casting" class="nav-link"><span class="nav-icon">🔄</span> Type Casting</a>
+    <a href="#string" class="nav-link"><span class="nav-icon">📝</span> String Methods</a>
+    <a href="#math" class="nav-link"><span class="nav-icon">🔢</span> Math Class</a>
+    <a href="#array" class="nav-link"><span class="nav-icon">📊</span> Array</a>
+    <a href="#methods" class="nav-link"><span class="nav-icon">⚙️</span> Methods</a>
+    <a href="#scanner" class="nav-link"><span class="nav-icon">⌨️</span> Scanner (Input)</a>
+  </div>
+</nav>
+
+<!-- Main -->
+<main class="main-content">
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-badge">☕ Java Concept Reference</div>
+  <h1>สรุป Concept คำสั่ง Java</h1>
+  <p>รวมคำสั่งพื้นฐาน Java พร้อมตัวอย่างโค้ดและคำอธิบายภาษาไทย เข้าใจง่าย นำไปใช้ได้ทันที</p>
+  <div class="stats-row">
+    <div class="stat-item"><div class="stat-num">8</div><div class="stat-label">หัวข้อ</div></div>
+    <div class="stat-item"><div class="stat-num">20+</div><div class="stat-label">ตัวอย่างโค้ด</div></div>
+    <div class="stat-item"><div class="stat-num">100%</div><div class="stat-label">ภาษาไทย</div></div>
+  </div>
+</div>
+
+<!-- 1. Variables -->
+<section class="section" id="variables">
+  <div class="section-header">
+    <div class="section-icon icon-orange">📦</div>
+    <h2 class="section-title">1. การประกาศตัวแปร (Variables)</h2>
+  </div>
+  <p class="section-desc">ตัวแปรใน Java ต้องระบุชนิดข้อมูลก่อนเสมอ ตามรูปแบบ <code>type variableName = value;</code></p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>ชนิด</th><th>ตัวอย่าง</th><th>คำอธิบาย</th></tr></thead>
+    <tbody>
+      <tr><td><code>char</code></td><td><code>'J'</code></td><td>ตัวอักษรเดี่ยว</td></tr>
+      <tr><td><code>String</code></td><td><code>"Hello"</code></td><td>ข้อความ</td></tr>
+      <tr><td><code>int</code></td><td><code>3</code></td><td>จำนวนเต็ม</td></tr>
+      <tr><td><code>float</code></td><td><code>1.66f</code></td><td>ทศนิยม (ต้องมี f)</td></tr>
+      <tr><td><code>double</code></td><td><code>3.345</code></td><td>ทศนิยมความละเอียดสูง</td></tr>
+      <tr><td><code>final</code></td><td><code>final int X = 15;</code></td><td>ค่าคงที่ (constant)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="code-block">
+    <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+    <div class="code-body"><code><span class="cm">// รูปแบบ: type variableName = value;</span>
+<span class="kw">char</span> _one = <span class="st">'J'</span>;
+<span class="tp">String</span> _str = <span class="st">"osepha"</span>;
+<span class="kw">int</span> This_Integer = <span class="nm">3</span>;
+<span class="kw">float</span> This_Float = <span class="nm">1.66f</span>;    <span class="cm">// ต้องมี f ต่อท้าย</span>
+<span class="kw">double</span> This_Double = <span class="nm">3.3456</span>;
+<span class="kw">final int</span> Const = <span class="nm">15</span>;       <span class="cm">// final = ค่าคงที่</span></code></div>
+  </div>
+
+  <div class="info-box tip"><span class="info-box-icon">💡</span><div class="info-box-content"><strong>Tip:</strong> ใช้ <code>final</code> เมื่อต้องการให้ค่าตัวแปรไม่เปลี่ยนแปลง เช่น ค่า PI</div></div>
+</section>
+
+<!-- 2. Output -->
+<section class="section" id="output">
+  <div class="section-header">
+    <div class="section-icon icon-blue">🖨️</div>
+    <h2 class="section-title">2. การแสดงผล (Print Output)</h2>
+  </div>
+  <p class="section-desc">Java มีคำสั่งแสดงผล 3 แบบ ได้แก่ <code>print</code>, <code>println</code> และ <code>printf</code></p>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-blue">print</span> พิมพ์แบบไม่ขึ้นบรรทัดใหม่</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code>System.out.<span class="fn">print</span>(<span class="st">"Hello"</span>);   <span class="cm">// ไม่ขึ้นบรรทัดใหม่</span></code></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-green">println</span> พิมพ์พร้อมขึ้นบรรทัดใหม่</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code>System.out.<span class="fn">println</span>(<span class="st">"Hello"</span>);  <span class="cm">// ขึ้นบรรทัดใหม่อัตโนมัติ</span>
+System.out.<span class="fn">println</span>(<span class="nm">3</span> + <span class="nm">15</span> + <span class="nm">3.34</span>); <span class="cm">// ผลลัพธ์: 21.34</span></code></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-purple">printf</span> พิมพ์แบบจัดรูปแบบ</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code>System.out.<span class="fn">printf</span>(<span class="st">"Float = %f"</span>, This_Float);
+<span class="cm">// %d = int, %f = float/double, %s = String, %c = char</span></code></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Casting -->
+<section class="section" id="casting">
+  <div class="section-header">
+    <div class="section-icon icon-green">🔄</div>
+    <h2 class="section-title">3. การแปลงชนิดข้อมูล (Type Casting)</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-green">Widening</span> แปลงอัตโนมัติ (เล็ก → ใหญ่)</div>
+    <div class="type-flow">
+      <span class="type-chip">byte</span><span class="type-arrow">→</span>
+      <span class="type-chip">short</span><span class="type-arrow">→</span>
+      <span class="type-chip">char</span><span class="type-arrow">→</span>
+      <span class="type-chip">int</span><span class="type-arrow">→</span>
+      <span class="type-chip">long</span><span class="type-arrow">→</span>
+      <span class="type-chip">float</span><span class="type-arrow">→</span>
+      <span class="type-chip">double</span>
+    </div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="kw">int</span> my_Int = <span class="nm">10</span>;
+<span class="kw">double</span> my_Double = my_Int;  <span class="cm">// อัตโนมัติ: int → double</span>
+System.out.<span class="fn">println</span>(my_Double); <span class="cm">// 10.0</span></code></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-orange">Narrowing</span> แปลงด้วยตนเอง (ใหญ่ → เล็ก)</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="kw">double</span> myD = <span class="nm">9.21</span>;
+<span class="kw">long</span> myL = (<span class="kw">long</span>) myD;  <span class="cm">// ต้อง cast เอง: double → long</span>
+System.out.<span class="fn">println</span>(myL);  <span class="cm">// 9 (ตัดทศนิยมทิ้ง)</span></code></div>
+    </div>
+  </div>
+
+  <div class="info-box warn"><span class="info-box-icon">⚠️</span><div class="info-box-content"><strong>Warning:</strong> Narrowing Casting อาจทำให้สูญเสียข้อมูล เช่น ทศนิยมจะถูกตัดทิ้ง</div></div>
+</section>
+
+<!-- 4. String -->
+<section class="section" id="string">
+  <div class="section-header">
+    <div class="section-icon icon-purple">📝</div>
+    <h2 class="section-title">4. การจัดการ String</h2>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Method</th><th>คำอธิบาย</th><th>ตัวอย่าง</th></tr></thead>
+    <tbody>
+      <tr><td><code>.length()</code></td><td>นับความยาว</td><td><code>"Hello".length() → 5</code></td></tr>
+      <tr><td><code>.toUpperCase()</code></td><td>แปลงเป็นตัวพิมพ์ใหญ่</td><td><code>"abc" → "ABC"</code></td></tr>
+      <tr><td><code>.toLowerCase()</code></td><td>แปลงเป็นตัวพิมพ์เล็ก</td><td><code>"ABC" → "abc"</code></td></tr>
+      <tr><td><code>.indexOf()</code></td><td>หาตำแหน่งตัวอักษร</td><td><code>"Hello".indexOf("l") → 2</code></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="code-block">
+    <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+    <div class="code-body"><code><span class="tp">String</span> alpha = <span class="st">"AbCDEFGHiJKLMNOP"</span>;
+System.out.<span class="fn">println</span>(alpha.<span class="fn">length</span>());       <span class="cm">// 16</span>
+System.out.<span class="fn">println</span>(alpha.<span class="fn">toUpperCase</span>()); <span class="cm">// ABCDEFGHIJKLMNOP</span>
+System.out.<span class="fn">println</span>(alpha.<span class="fn">toLowerCase</span>()); <span class="cm">// abcdefghijklmnop</span>
+System.out.<span class="fn">println</span>(alpha.<span class="fn">indexOf</span>(<span class="st">"G"</span>));  <span class="cm">// 6</span></code></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">String Concatenation (การต่อ String)</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="tp">String</span> s = <span class="st">"12"</span>;
+<span class="kw">int</span> n = <span class="nm">20</span>;
+<span class="tp">String</span> result = s + n;  <span class="cm">// ผลลัพธ์: "1220" (String)</span></code></div>
+    </div>
+    <div class="info-box note"><span class="info-box-icon">📌</span><div class="info-box-content">เมื่อ String + ตัวเลข จะได้ผลลัพธ์เป็น String เสมอ</div></div>
+  </div>
+</section>
+
+<!-- 5. Math -->
+<section class="section" id="math">
+  <div class="section-header">
+    <div class="section-icon icon-cyan">🔢</div>
+    <h2 class="section-title">5. Math Class</h2>
+  </div>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Method</th><th>คำอธิบาย</th></tr></thead>
+    <tbody>
+      <tr><td><code>Math.random()</code></td><td>สุ่มเลข 0.0 - 0.999...</td></tr>
+      <tr><td><code>Math.max(a,b)</code></td><td>หาค่ามากสุด</td></tr>
+      <tr><td><code>Math.min(a,b)</code></td><td>หาค่าน้อยสุด</td></tr>
+      <tr><td><code>Math.sqrt(x)</code></td><td>รากที่ 2</td></tr>
+      <tr><td><code>Math.abs(x)</code></td><td>ค่าสัมบูรณ์</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="code-block">
+    <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+    <div class="code-body"><code><span class="cm">// สุ่มเลข 0 ถึง 100</span>
+<span class="kw">int</span> randomNum = (<span class="kw">int</span>) (Math.<span class="fn">random</span>() * <span class="nm">101</span>);
+System.out.<span class="fn">printf</span>(<span class="st">"Random: %d\n"</span>, randomNum);</code></div>
+  </div>
+</section>
+
+<!-- 6. Array -->
+<section class="section" id="array">
+  <div class="section-header">
+    <div class="section-icon icon-pink">📊</div>
+    <h2 class="section-title">6. Array (อาร์เรย์)</h2>
+  </div>
+  <p class="section-desc">Array เป็นโครงสร้างข้อมูลที่เก็บค่าหลายค่าในตัวแปรเดียว โดย index เริ่มจาก 0</p>
+
+  <div class="code-block">
+    <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+    <div class="code-body"><code><span class="cm">// ประกาศ Array</span>
+<span class="tp">String</span>[] cars = {<span class="st">"Volvo"</span>, <span class="st">"BMW"</span>, <span class="st">"Ford"</span>, <span class="st">"Mazda"</span>};
+System.out.<span class="fn">println</span>(cars[<span class="nm">0</span>]);  <span class="cm">// Volvo</span>
+System.out.<span class="fn">println</span>(cars[<span class="nm">2</span>]);  <span class="cm">// Ford</span>
+
+<span class="cm">// วนลูป Array</span>
+<span class="kw">for</span> (<span class="tp">String</span> car : cars) {
+  System.out.<span class="fn">println</span>(car);
+}</code></div>
+  </div>
+</section>
+
+<!-- 7. Methods -->
+<section class="section" id="methods">
+  <div class="section-header">
+    <div class="section-icon icon-orange">⚙️</div>
+    <h2 class="section-title">7. Methods (เมธอด)</h2>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-blue">void</span> Method ไม่คืนค่า</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="cm">// นิยาม Method</span>
+<span class="kw">static void</span> <span class="fn">myMethod</span>(<span class="tp">String</span> lang, <span class="kw">int</span> num) {
+  System.out.<span class="fn">println</span>(lang + <span class="st">" x "</span> + num);
+}
+
+<span class="cm">// เรียกใช้</span>
+<span class="fn">myMethod</span>(<span class="st">"JAVA"</span>, <span class="nm">69</span>);  <span class="cm">// JAVA x 69</span></code></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-green">return</span> Method คืนค่า</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="kw">static int</span> <span class="fn">add</span>(<span class="kw">int</span> x, <span class="kw">int</span> y) {
+  <span class="kw">return</span> x + y;
+}
+
+<span class="kw">int</span> result = <span class="fn">add</span>(<span class="nm">54</span>, <span class="nm">56</span>);  <span class="cm">// 110</span></code></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title"><span class="badge badge-purple">Overloading</span> Method ชื่อเดียวกัน ต่างพารามิเตอร์</div>
+    <div class="code-block">
+      <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+      <div class="code-body"><code><span class="kw">static int</span> <span class="fn">plus</span>(<span class="kw">int</span> a, <span class="kw">int</span> b) { <span class="kw">return</span> a + b; }
+<span class="kw">static double</span> <span class="fn">plus</span>(<span class="kw">double</span> a, <span class="kw">double</span> b) { <span class="kw">return</span> a + b; }
+
+<span class="fn">plus</span>(<span class="nm">88</span>, <span class="nm">75</span>);       <span class="cm">// เรียก int version → 163</span>
+<span class="fn">plus</span>(<span class="nm">64.3</span>, <span class="nm">36.26</span>); <span class="cm">// เรียก double version → 100.56</span></code></div>
+    </div>
+  </div>
+
+  <div class="info-box tip"><span class="info-box-icon">💡</span><div class="info-box-content"><strong>Overloading:</strong> Java เลือก method ที่เหมาะสมจากชนิดข้อมูลของ argument โดยอัตโนมัติ</div></div>
+</section>
+
+<!-- 8. Scanner -->
+<section class="section" id="scanner">
+  <div class="section-header">
+    <div class="section-icon icon-cyan">⌨️</div>
+    <h2 class="section-title">8. Scanner (รับค่าจากผู้ใช้)</h2>
+  </div>
+  <p class="section-desc">ใช้ <code>Scanner</code> class จาก <code>java.util</code> เพื่อรับข้อมูลจาก keyboard</p>
+
+  <div class="table-wrap"><table>
+    <thead><tr><th>Method</th><th>รับค่าประเภท</th></tr></thead>
+    <tbody>
+      <tr><td><code>nextLine()</code></td><td>String (ทั้งบรรทัด)</td></tr>
+      <tr><td><code>nextInt()</code></td><td>int</td></tr>
+      <tr><td><code>nextDouble()</code></td><td>double</td></tr>
+      <tr><td><code>nextBoolean()</code></td><td>boolean</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="code-block">
+    <div class="code-header"><div class="code-dots"><span></span><span></span><span></span></div><span class="code-lang">Java</span><button class="copy-btn">Copy</button></div>
+    <div class="code-body"><code><span class="kw">import</span> java.util.Scanner;
+
+Scanner myS = <span class="kw">new</span> <span class="tp">Scanner</span>(System.in);
+System.out.<span class="fn">println</span>(<span class="st">"Enter username:"</span>);
+
+<span class="tp">String</span> userName = myS.<span class="fn">nextLine</span>();
+System.out.<span class="fn">println</span>(<span class="st">"Username: "</span> + userName);</code></div>
+  </div>
+
+  <div class="info-box warn"><span class="info-box-icon">⚠️</span><div class="info-box-content"><strong>ระวัง:</strong> ใช้ <code>nextLine()</code> หลัง <code>nextInt()</code> จะต้อง <code>nextLine()</code> เปล่าก่อน 1 ครั้ง เพื่อเคลียร์ newline</div></div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <p>☕ Java Concept Summary — สร้างเพื่อการเรียนรู้ภาษา Java</p>
+</footer>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
