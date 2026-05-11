@@ -2,6 +2,12 @@
 https://khone3.github.io/JAVA-summarize/
 > สรุป Concept คำสั่ง Java พร้อมตัวอย่างโค้ดและวิธีการนำไปใช้งาน
 
+คำสั่งเล่นเกม java DisplayGame.java 
+```
+javac DisplayGame.java
+java DisplayGame
+```
+
 ## 📋 เกี่ยวกับโปรเจกต์
 
 เว็บไซต์สรุปคำสั่งพื้นฐานของภาษา Java ออกแบบด้วย Glassmorphism UI, Dark Mode รองรับ Responsive ทุกขนาดหน้าจอ
